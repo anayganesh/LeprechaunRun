@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=3 uid="uid://bardulynrr8gm"]
+
+[ext_resource type="Script" uid="uid://csnlwbedaloqp" path="res://GameOver/game_over.gd" id="1_bed4b"]
+[ext_resource type="FontFile" uid="uid://ix8c4leb45qg" path="res://Sharp Retro/Sharp Retro.ttf" id="2_pyvlu"]
+
+[sub_resource type="Theme" id="Theme_40baj"]
+default_font = ExtResource("2_pyvlu")
+default_font_size = 64
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a1htc"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bed4b")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+z_index = 1
+layout_direction = 2
+layout_mode = 0
+offset_left = 56.0
+offset_top = 80.0
+offset_right = 464.0
+offset_bottom = 168.0
+theme = SubResource("Theme_40baj")
+theme_override_constants/shadow_outline_size = 5
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_group_ = true
+
+[node name="ColorRect" type="ColorRect" parent="RichTextLabel"]
+show_behind_parent = true
+layout_mode = 0
+offset_right = 432.0
+offset_bottom = 88.0
+color = Color(0.592157, 0, 0, 1)
+
+[node name="Restart" type="Button" parent="."]
+z_index = 1
+layout_direction = 2
+layout_mode = 0
+offset_left = 88.0
+offset_top = 184.0
+offset_right = 432.0
+offset_bottom = 248.0
+theme = SubResource("Theme_40baj")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_a1htc")
+text = "Restart"
+metadata/_edit_group_ = true
+
+[connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]

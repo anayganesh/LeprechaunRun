@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://drt7fpwgw8dku"]
+
+[ext_resource type="Script" uid="uid://cjmoxmpp1w4gw" path="res://Coin/coinspawner.gd" id="1_u46k4"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_u46k4")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+autostart = true
